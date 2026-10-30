@@ -1,8 +1,12 @@
 import { Router } from "express";
-import { listarOculos } from "../controllers/oculos.controller.js";
+import {
+    listarOculos,
+    cadastrarOculos
+} from "../controllers/oculos.controller.js";
 
 const router = Router();
 
 router.get("/", listarOculos);
+router.post("/", cadastrarOculos);
 
 export default router;
