@@ -43,6 +43,27 @@ export function atualizarOculos(req, res) {
 }
 
 
+
+
+export function excluirOculos(req, res) {
+    const id = Number(req.params.id);
+
+    const indice = oculos.findIndex(item => item.id === id);
+
+    if (indice === -1) {
+        return res.status(404).json({
+            mensagem: "Óculos não encontrado!"
+        });
+    }
+
+    oculos.splice(indice, 1);
+
+    res.json({
+        mensagem: "Óculos excluído com sucesso!"
+    });
+}
+
+
 export function cadastrarOculos(req, res) {
    const dados = {
     id: oculos.length + 1,
