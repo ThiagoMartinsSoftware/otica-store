@@ -7,7 +7,7 @@ import {  //funções exportadas do controller
     excluirOculos
 } from "../controllers/oculos.controller.js";
 
-const router = Router();
+const router = Router(); //roteador do express para definir as rotas da API
 
 router.get("/", listarOculos);
 router.post("/", cadastrarOculos);
